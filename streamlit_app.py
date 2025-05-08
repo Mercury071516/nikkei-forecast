@@ -1,3 +1,12 @@
+import os
+
+os.makedirs(".streamlit", exist_ok=True)
+with open(".streamlit/config.toml", "w") as f:
+    f.write("""
+[server]
+port = $PORT
+enableCORS = false
+""")
 import streamlit as st
 import yfinance as yf
 from selenium import webdriver
